@@ -11,11 +11,11 @@ from db.run_sql import run_sql
 
 class TestBooking(unittest.TestCase):
 
-    # def setUp(self):
-    #     self.member1 = Member("Mike Langridge")
+    def setUp(self):
+        self.member1 = Member("Mike Langridge")
 
-    #     self.member2 = Member("Helen Langridge")
-    #     # member_repository.save(self.member2)
+        self.member2 = Member("Helen Langridge")
+        # member_repository.save(self.member2)
 
     #     self.lesson1 = Lesson("Spin with Jim", "Monday 5th September", "07:00", "60 mins", "Jim", "Spin Room", 20, "Rise and shine with an hour's intense spin class that'll have you hitting your VO2 max over and over again. Don't forget your own electrolyte drink and towel")
     #     # lesson_repository.save(self.lesson1)
@@ -30,7 +30,7 @@ class TestBooking(unittest.TestCase):
     # def test_booking1_has_member(self):
     #     self.assertEqual("Helen Langridge", self.booking1.member.name)
 
-# Couldn't get this test to work
+# Couldn't get these test to work
     # def test_booking_added_to_db(self):
     #     booking_repository.save(self.booking1)
     #     booking_added = booking_repository.select(self.booking1.id)

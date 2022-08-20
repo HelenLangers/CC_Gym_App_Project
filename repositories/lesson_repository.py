@@ -40,10 +40,13 @@ def delete_all():
     sql = "DELETE FROM lessons"
     run_sql(sql)
 
-def list_members_attending_class(lesson):
+def get_member_list_for_lesson(lesson):
     members = []
 
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE lesson_id = %s"
+    sql = """SELECT * FROM members
+            INNER JOIN bookings
+            on members.id = bookings.member_id
+            WHERE bookings.lesson_id = %s"""
     values = [lesson.id]
     results = run_sql(sql, values)
 
@@ -51,4 +54,3 @@ def list_members_attending_class(lesson):
         member = Member(row['name'])
         members.append(member)
     return members
-
