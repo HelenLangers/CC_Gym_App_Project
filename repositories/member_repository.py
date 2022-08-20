@@ -40,13 +40,10 @@ def delete_all():
     sql = "DELETE FROM members"
     run_sql(sql)
 
+
 def list_lessons_member_is_signed_up_for(member):
     lessons = []
-
-    sql = """SELECT * FROM lessons
-            INNER JOIN bookings
-            on bookings.lesson_id = lesson.id
-            WHERE bookings.member_id = %s"""
+    sql = """SELECT * FROM lessons INNER JOIN bookings on bookings.lesson_id = lessons.id WHERE bookings.member_id = %s"""
     values = [member.id]
     results = run_sql(sql, values)
 
