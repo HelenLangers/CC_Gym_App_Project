@@ -56,7 +56,7 @@ class TestLesson(unittest.TestCase):
     #     self.assertEqual(7, len(lessons))
 
 # This test worked, commenting out for future tests not to be affected
-    def test_delete_all(self):
-        lesson_repository.delete_all()
-        lessons = lesson_repository.select_all()
-        self.assertEqual(0, len(lessons))    
+    # def test_delete_all(self):
+    #     lesson_repository.delete_all()
+    #     lessons = lesson_repository.select_all()
+    #     self.assertEqual(0, len(lessons))    
