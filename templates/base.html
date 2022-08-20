@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css' )}}">
     <title>Active Gym</title>
 </head>
 <body>
-    
+    <header>
+        <h1 class="logo"><a href="/" class="home-link">Active</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/classes">CLASSES</a></li> 
+                <li><a href="/members">MEMBERS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr class="base-line">
+    <main>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </main>
+    <footer>
+        <div>
+        <p><strong>Active Gym &copy; 2022</strong></p>
+        </div>
+    </footer>
 </body>
 </html>
