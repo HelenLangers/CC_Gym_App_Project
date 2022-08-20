@@ -1,5 +1,8 @@
 import unittest
 from models.lesson import Lesson
+import repositories.lesson_repository as lesson_repository
+from repositories.lesson_repository import *
+from db.run_sql import run_sql
 
 class TestLesson(unittest.TestCase):
 
@@ -30,3 +33,12 @@ class TestLesson(unittest.TestCase):
 
     def test_lesson2_has_description(self):
         self.assertEqual("Stretch off the stresses of mid-week with our restorative yoga hour", self.lesson2.description)
+
+# This test worked but commenting out to stop it running each time I run tests.
+    def test_lesson_added_to_db(self):
+        lesson_repository.save(self.lesson1)
+        lesson = lesson_repository.select(self.lesson1.id)
+        # sql = "SELECT title FROM lessons WHERE id = %s"
+        # values = [self.lesson1.id]
+        # results = run_sql(sql,values)
+        self.assertEqual("Spin with Jim", lesson.title)

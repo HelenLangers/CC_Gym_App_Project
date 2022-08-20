@@ -29,13 +29,15 @@ class TestMember(unittest.TestCase):
     #     members = member_repository.select_all()
     #     self.assertEqual(4, len(members))
 
+# This test worked, commenting out for future tests not to be affected
     # def test_delete_by_id(self):
     #     member_repository.save(self.member2)        
     #     member_repository.delete(self.member2.id)
     #     members = member_repository.select_all()
     #     self.assertEqual(5, len(members))
 
-    def test_delete_all(self):
-        member_repository.delete_all()
-        members = member_repository.select_all()
-        self.assertEqual(0, len(members))        
+# This test worked, commenting out for future tests not to be affected
+    # def test_delete_all(self):
+    #     member_repository.delete_all()
+    #     members = member_repository.select_all()
+    #     self.assertEqual(0, len(members))        
