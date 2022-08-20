@@ -7,7 +7,9 @@ CREATE TABLE lessons (
     title VARCHAR(255),
     date VARCHAR(255),
     time VARCHAR(255),
+    duration VARCHAR(255),
     instructor VARCHAR(255),
+    location VARCHAR(255),
     capacity INT,
     Description VARCHAR(255)
 );
