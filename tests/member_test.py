@@ -16,7 +16,8 @@ class TestMember(unittest.TestCase):
     def test_member_added_to_db(self):
         member = Member("Matt Thomson")
         member_repository.save(member)
-        sql = "SELECT name FROM members WHERE id = %s"
-        values = [member.id]
-        results = run_sql(sql,values)
-        self.assertEqual("Matt Thomson", results[0]['name'])
+        member_repository.select(member.id)
+        # sql = "SELECT name FROM members WHERE id = %s"
+        # values = [member.id]
+        # results = run_sql(sql,values)
+        self.assertEqual("Matt Thomson", member.name)
