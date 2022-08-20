@@ -2,7 +2,7 @@ import unittest
 from models.lesson import Lesson
 import repositories.lesson_repository as lesson_repository
 from repositories.lesson_repository import *
-from db.run_sql import run_sql
+# from db.run_sql import run_sql
 
 class TestLesson(unittest.TestCase):
 
@@ -35,10 +35,28 @@ class TestLesson(unittest.TestCase):
         self.assertEqual("Stretch off the stresses of mid-week with our restorative yoga hour", self.lesson2.description)
 
 # This test worked but commenting out to stop it running each time I run tests.
-    def test_lesson_added_to_db(self):
-        lesson_repository.save(self.lesson1)
-        lesson = lesson_repository.select(self.lesson1.id)
-        # sql = "SELECT title FROM lessons WHERE id = %s"
-        # values = [self.lesson1.id]
-        # results = run_sql(sql,values)
-        self.assertEqual("Spin with Jim", lesson.title)
+    # def test_lesson_added_to_db(self):
+    #     lesson_repository.save(self.lesson1)
+    #     lesson = lesson_repository.select(self.lesson1.id)
+    #     # sql = "SELECT title FROM lessons WHERE id = %s"
+    #     # values = [self.lesson1.id]
+    #     # results = run_sql(sql,values)
+    #     self.assertEqual("Spin with Jim", lesson.title)
+
+# This test worked but commenting out as it won't work as tests continue
+    # def test_select_all_list(self):
+    #     lessons = lesson_repository.select_all()
+    #     self.assertEqual(7, len(lessons))
+
+# This test worked, commenting out for future tests not to be affected
+    # def test_delete_by_id(self):
+    #     lesson_repository.save(self.lesson2)        
+    #     lesson_repository.delete(self.lesson2.id)
+    #     lessons = lesson_repository.select_all()
+    #     self.assertEqual(7, len(lessons))
+
+# This test worked, commenting out for future tests not to be affected
+    def test_delete_all(self):
+        lesson_repository.delete_all()
+        lessons = lesson_repository.select_all()
+        self.assertEqual(0, len(lessons))    

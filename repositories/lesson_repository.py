@@ -20,3 +20,21 @@ def select(id):
         lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor'], result['location'], result['capacity'], result['description'])
     return lesson
 
+def select_all():
+    lessons = []
+
+    sql = "SELECT * FROM lessons"
+    results = run_sql(sql)
+    for row in results:
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
+        lessons.append(lesson)
+    return lessons
+
+def delete(id):
+    sql = "DELETE FROM lessons WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def delete_all():
+    sql = "DELETE FROM lessons"
+    run_sql(sql)
