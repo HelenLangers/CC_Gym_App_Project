@@ -1,17 +1,16 @@
 import unittest
 from models.member import Member
 import repositories.member_repository as member_repository
-from repositories.member_repository import *
 from db.run_sql import run_sql
 
 class TestMember(unittest.TestCase):
 
-    def setUp(self):
-        self.member1 = Member("Mike Langridge")
-        self.member2 = Member("Helen Langridge")
+    # def setUp(self):
+    #     self.member1 = Member("Mike Langridge")
+    #     self.member2 = Member("Helen Langridge")
 
-    def test_member1_has_name(self):
-        self.assertEqual("Mike Langridge", self.member1.name)
+    # def test_member1_has_name(self):
+    #     self.assertEqual("Mike Langridge", self.member1.name)
 
 # This test worked but commenting out as it will keep adding to database each time I run the tests and they'll fail because this exists
     # def test_member_added_to_db(self):
