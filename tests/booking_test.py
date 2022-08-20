@@ -13,5 +13,10 @@ class TestBooking(unittest.TestCase):
         self.lesson1 = Lesson("Spin with Jim", "Monday 5th September", "07:00", "60 mins", "Jim", "Spin Room", 20, "Rise and shine with an hour's intense spin class that'll have you hitting your VO2 max over and over again. Don't forget your own electrolyte drink and towel")
         self.lesson2 = Lesson("Peaceful Yoga", "Wednesday 7th September", "17:30", "60 mins", "Clara", "Studio", 5, "Stretch off the stresses of mid-week with our restorative yoga hour")
 
-        self.booking1 = Booking(self.lesson1, self.member1)
-        self.booking2 = Booking(self.lesson2, self.member2)
+        self.booking1 = Booking(self.lesson1, self.member2)
+
+    def test_booking1_has_lesson(self):
+        self.assertEqual("Spin with Jim", self.booking1.lesson.title)
+
+    def test_booking1_has_member(self):
+        self.assertEqual("Helen Langridge", self.booking1.member.name)
