@@ -170,6 +170,7 @@ main {
     border-radius: 10px;
     background-color: #E3FAFF;
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px; 
+    width: 40vw;
 }
 
 .one-lesson-block hr {
@@ -215,9 +216,20 @@ strong {
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+.edit-member-lesson {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #E3FAFF;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px; 
+}
+
+/* @media (max-width: 768px) {
     .lesson-blocks {
         display: block;
         text-align: center;
     }
-}
+} */

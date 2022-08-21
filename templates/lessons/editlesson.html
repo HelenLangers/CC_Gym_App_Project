@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <div>
+        <p><a href="/classes" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
+    </div>
+    <div class="container">
+        <div class="edit-member-lesson">
+            <h3>Edit {{lesson.title}}</h3>
+            <form action="/classes/{{lesson.id}}" method="post" class="form">
+                <label for="title">
+                    <span>Title:</span>
+                    <input type="text" name="title" id="title" value="{{lesson.title}}">
+                    </label>
+    
+                    <label for="date">
+                    <span>Date:</span>
+                    <input type="text" name="date" id="date" value="{{lesson.date}}">
+                    </label>
+    
+                    <label for="time">
+                    <span>Time:</span>
+                    <input type="text" name="time" id="time" value="{{lesson.time}}">
+                    </label>
+    
+                    <label for="duration">
+                    <span>Duration:</span>
+                    <input type="text" name="duration" id="duration" value="{{lesson.duration}}">
+                    </label>
+    
+                    <label for="instructor">
+                    <span>Instructor:</span>
+                    <input type="text" name="instructor" id="instructor" value="{{lesson.instructor}}">
+                    </label>
+    
+                    <label for="location">
+                    <span>Location:</span>
+                    <input type="text" name="location" id="location" value="{{lesson.location}}">
+                    </label>
+    
+                    <label for="capacity">
+                    <span>Capacity:</span>
+                    <input type="number" name="capacity" id="capacity" value="{{lesson.capacity}}">
+                    </label>
+    
+                    <label for="description">
+                    <span>Description:</span>
+                    <textarea id = "description" name="description" rows="2" cols = "16" value="{{lesson.description}}"></textarea>
+                    </label>
+
+                <input type="submit" class="button" value="Update">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

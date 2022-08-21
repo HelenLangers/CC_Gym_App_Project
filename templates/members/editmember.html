@@ -6,15 +6,15 @@
         <p><a href="/members" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
     </div>
     <div class="container">
-        <div class="one-lesson-block">
+        <div class="edit-member-lesson">
             <h3>Edit {{member.name}}</h3>
             <form action="/members/{{member.id}}" method="post" class="form">
                 <label for="name">
                     <span>Name:</span>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="{{member.name}}">
                 </label>
 
-                <input type="submit" class="button" value="Submit">
+                <input type="submit" class="button" value="Update">
             </form>
         </div>
     </div>
