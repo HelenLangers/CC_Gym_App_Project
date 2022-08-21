@@ -3,18 +3,22 @@
 {% block content %}
 
 <section>
+    <div>
+        <p><a href="/classes" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
+    </div>
     <div class="container">
-        <div class="dashboard">
-        <h3>{{ lesson.title }}</h3>
+        <div class="one-lesson-block">
+        <h3 class="attendance-title">{{ lesson.title }}</h3>
         <p>{{ lesson.date }} at {{ lesson.time }}</p>
-        <p>for {{ lesson.duration }} in the {{ lesson.location }}</p>
+        <p>{{ lesson.duration }} in the {{ lesson.location }}</p>
         <p>Instructor: {{ lesson.instructor }}</p>
-        <p>{{ lesson.description }}</p>
-        <p>Capacity: {{ lesson.capacity }}</p>
-        <br>
-        <p>Attendance list:</p>
+        <p class="description">{{ lesson.description }}</p>
+        <hr>
+        <p>Total Capacity: {{ lesson.capacity }}</p>
+        <hr>
+        <p class="attendance-title">Attendance list:</p>
         {% for member in members %}
-            <p>{{ member.name }}</p>
+            <p><a href="/members/{{ member.id }}">{{ member.name }}</a></p>
         {% endfor %}
         </div>
     </div>
