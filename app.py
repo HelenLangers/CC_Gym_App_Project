@@ -16,7 +16,9 @@ def index():
     bookings_total = booking_repository.select_all_len()
     members_total = member_repository.select_all_len()
     lessons_total = lesson_repository.select_all_len()
-    return render_template("index.html", bookings_total = bookings_total, members_total = members_total, lessons_total = lessons_total)
+    member_list = member_repository.select_all()
+    lesson_list = lesson_repository.select_all()
+    return render_template("index.html", bookings_total = bookings_total, members_total = members_total, lessons_total = lessons_total, member_list = member_list, lesson_list = lesson_list)
 
 if __name__ == "__main__":
     app.run(debug=True)

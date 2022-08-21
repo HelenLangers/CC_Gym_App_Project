@@ -8,7 +8,9 @@
     <div class="container">
         <div class="one-lesson-block">
             <h3 class="attendance-title">{{ member.name }}</h3>
-            <p class="attendance-title">Class List:</p>
+            <a href="" class="button" style="color: #fff">Edit Member</a>
+            <br>
+            <p class="attendance-title">Bookings:</p>
             {% for lesson in lessons %}
             <p>{{ lesson.title }}</p>
             <p>{{ lesson.date }} at {{ lesson.time }}</p>

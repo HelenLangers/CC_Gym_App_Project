@@ -195,6 +195,14 @@ main {
     font-weight: bold;
 }
 
+.button {
+    background-color: #256F87;
+    border: solid;
+    color:#fff;
+    padding: 8px;
+    text-align: center;
+}
+
 footer {
     padding: 1rem;
     display: flex;
