@@ -14,7 +14,6 @@
     <div class="add-members-classes">
         <div class="dashboard">
             <h2>Add a Class</h2>
-            <div>
             <form action="/classes" method="POST" class="form">
                 <label for="title">
                 <span>Title:</span>
@@ -59,10 +58,17 @@
                 <input type="submit" value="Add Class">
             </form>
         </div>
-        </div>
-
-        <div class="dashboard">
-            <h2>Add a Member</h2>
+        <div class="member-flex-container">
+            <div class="dashboard">
+                <h2>Add a Member</h2>
+                <form action="/members" method="POST" class="form">
+                    <label for="name">
+                    <span>Name:</span>
+                    <input type="text" name="name" id="name">
+                    </label>
+                    <input type="submit" value="Add Member">
+                </form>
+            </div>
         </div>
     </div>
 </section>

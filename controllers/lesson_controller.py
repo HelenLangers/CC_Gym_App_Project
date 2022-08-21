@@ -28,4 +28,4 @@ def add_lesson():
     description = request.form['description']
     new_lesson = Lesson(title, date, time, duration, instructor, location, capacity, description)
     lesson_repository.save(new_lesson)
-    return redirect("/classes")
+    return redirect("/")
