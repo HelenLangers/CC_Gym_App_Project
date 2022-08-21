@@ -51,3 +51,13 @@ def list_lessons_member_is_signed_up_for(member):
         lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
         lessons.append(lesson)
     return lessons
+
+def select_all_len():
+    members = []
+
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+    for row in results:
+        member = Member(row['name'], row['id'])
+        members.append(member)
+    return len(members)   

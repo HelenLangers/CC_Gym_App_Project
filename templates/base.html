@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="{{url_for('static', filename='style.css' )}}">
+    <script src="https://kit.fontawesome.com/81f9c5208d.js" crossorigin="anonymous"></script>
     <title>Active Gym</title>
 </head>
 <body>
@@ -15,12 +16,13 @@
         <h1 class="logo"><a href="/" class="home-link">Active</a></h1>
         <nav>
             <ul>
-                <li><a href="/classes">CLASSES</a></li> 
+                <li><a href="/classes">CLASSES</a></li>
+                <li><span class="vertical-line">|</span></li>
                 <li><a href="/members">MEMBERS</a></li>
             </ul>
         </nav>
     </header>
-    <hr class="base-line">
+    <!-- <hr class="base-line"> -->
     <main>
         <section>
             {% block content %}
@@ -28,9 +30,8 @@
         </section>
     </main>
     <footer>
-        <div>
+        <p><i class="fa-brands fa-instagram"></i> | <i class="fa-brands fa-facebook"></i> | <i class="fa-brands fa-twitter"></i> |  <i class="fa-brands fa-tiktok"></i></p>
         <p><strong>Active Gym &copy; 2022</strong></p>
-        </div>
     </footer>
 </body>
 </html>

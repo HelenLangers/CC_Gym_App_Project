@@ -54,3 +54,13 @@ def get_member_list_for_lesson(lesson):
         member = Member(row['name'])
         members.append(member)
     return members
+
+def select_all_len():
+    lessons = []
+
+    sql = "SELECT * FROM lessons"
+    results = run_sql(sql)
+    for row in results:
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
+        lessons.append(lesson)
+    return len(lessons)

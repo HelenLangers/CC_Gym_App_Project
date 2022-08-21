@@ -40,3 +40,13 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
+
+def select_all_len():
+    bookings = []
+
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    for row in results:
+        booking = Booking(row['lesson_id'], row ['member_id'])
+        bookings.append(booking)
+    return len(bookings)
