@@ -64,3 +64,9 @@ def select_all_len():
         lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
         lessons.append(lesson)
     return len(lessons)
+
+
+def update(lesson):
+    sql = "UPDATE lessons SET (title, date, time, duration, instructor, location, capacity, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [lesson.title, lesson.date, lesson.time, lesson.duration, lesson.instructor, lesson.location, lesson.capacity, lesson.description, lesson.id]
+    run_sql(sql, values)   
