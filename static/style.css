@@ -49,15 +49,10 @@ nav>ul>li>a {
     color: #fff;
 }
 
-.base-line {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    color: #fff;
-    height: 1px
-}
-
 main {
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -93,6 +88,25 @@ main {
     text-decoration: none;
 }
 
+.lesson-heading {
+    color: white;
+}
+
+.container-lessons {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.lesson-blocks {
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: #E3FAFF;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px; 
+}
 
 footer {
     padding: 1rem;
