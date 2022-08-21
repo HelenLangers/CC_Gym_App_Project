@@ -1,0 +1,40 @@
+.home-link {
+    color: white;
+    text-decoration: none;
+}
+
+header > nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+.dashboard a {
+    color: black;
+    text-decoration: none;
+}
+
+.lesson-blocks a {
+    color: black;
+    text-decoration: none;
+}
+
+.one-lesson-block a {
+    color: black;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #256F87;
+    border: solid;
+    color:#fff;
+    padding: 8px;
+    text-align: center;
+}
