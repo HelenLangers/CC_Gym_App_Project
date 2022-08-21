@@ -11,6 +11,60 @@
             <p><a href="/bookings">Total Bookings</a>: {{ bookings_total }}</p>
         </div>
     </div>
+    <div class="add-members-classes">
+        <div class="dashboard">
+            <h2>Add a Class</h2>
+            <div>
+            <form action="/classes" method="POST" class="form">
+                <label for="title">
+                <span>Title:</span>
+                <input type="text" name="title" id="title">
+                </label>
+
+                <label for="date">
+                <span>Date:</span>
+                <input type="text" name="date" id="date">
+                </label>
+
+                <label for="time">
+                <span>Time:</span>
+                <input type="text" name="time" id="time">
+                </label>
+
+                <label for="duration">
+                <span>Duration:</span>
+                <input type="text" name="duration" id="duration">
+                </label>
+
+                <label for="instructor">
+                <span>Instructor:</span>
+                <input type="text" name="instructor" id="instructor">
+                </label>
+
+                <label for="location">
+                <span>Location:</span>
+                <input type="text" name="location" id="location">
+                </label>
+
+                <label for="capacity">
+                <span>Capacity:</span>
+                <input type="number" name="capacity" id="capacity">
+                </label>
+
+                <label for="description">
+                <span>Description:</span>
+                <textarea id = "description" name="description" rows="2" cols = "16"></textarea>
+                </label>
+
+                <input type="submit" value="Add Class">
+            </form>
+        </div>
+        </div>
+
+        <div class="dashboard">
+            <h2>Add a Member</h2>
+        </div>
+    </div>
 </section>
 
 
