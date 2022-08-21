@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<main>
-    <section>
-        <div class="container">
-            <div class="dashboard">
-                <h2>Admin Dashboard</h2>
-                <p><a href="/members">Current Members</a>: {{ members_total }}</p>
-                <p><a href="/lessons">Upcoming Classes</a>: {{ lessons_total }}</p>
-                <p><a href="/bookings">Total Bookings</a>: {{ bookings_total }}</p>
-            </div>
+
+<section>
+    <div class="container">
+        <div class="dashboard">
+            <h2>Admin Dashboard</h2>
+            <p><a href="/members">Current Members</a>: {{ members_total }}</p>
+            <p><a href="/lessons">Upcoming Classes</a>: {{ lessons_total }}</p>
+            <p><a href="/bookings">Total Bookings</a>: {{ bookings_total }}</p>
         </div>
-    </section>
-</main>
+    </div>
+</section>
+
 
 {% endblock %}

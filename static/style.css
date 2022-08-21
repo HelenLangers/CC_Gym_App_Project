@@ -88,6 +88,10 @@ main {
     text-decoration: none;
 }
 
+.lesson-main {
+    margin: auto;
+}
+
 .lesson-heading {
     color: white;
 }

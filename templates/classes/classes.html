@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 class="lesson-heading">Coming Up</h2>
-    {% for lesson in lessons %}
-    <div class="container-lessons">
-        <div class="lesson-blocks">
-            <h3>{{ lesson.title }}</h3>
-        </div>
-    </div>
+
+    <section>
+        <h2 class="lesson-heading">Coming Up</h2>
+            {% for lesson in lessons %}
+            <div class="container-lessons">
+                <div class="lesson-blocks">
+                    <h3>{{ lesson.title }}</h3>
+                </div>
+            </div>
     {% endfor %}
+    </section>
 
 {% endblock %}
