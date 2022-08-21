@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="edit-member-lesson">
+        <h2>Book a Class</h2>
+        <form action="/bookings" method="POST" class="form">
+            <label for="member">
+                <span>Member:</span>
+                <select name="member_id" id="member">
+                    <option value="">--Select Member--</option>
+                    {% for member in member_list %}
+                    <option value="{{member.id}}">{{member.name}}</option>
+                    {% endfor %}
+                </select>
+            </label>
+
+            <label for="lesson">
+                <span>Class:</span>
+                <select name="lesson_id" id="lesson">
+                    <option value="">--Select Class--</option>
+                    {% for lesson in lesson_list %}
+                    <option value="{{lesson.id}}">{{lesson.title}}, {{lesson.date}}, {{lesson.time}}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <input type="submit" class="button" value="Create Booking">
+        </form>
+    </div>
+</section>
+{% endblock %}

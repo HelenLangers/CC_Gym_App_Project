@@ -6,7 +6,7 @@ from models.lesson import Lesson
 lessons_blueprint = Blueprint("classes", __name__)
 
 @lessons_blueprint.route("/classes")
-def locations():
+def lessons():
     lessons = lesson_repository.select_all()
     return render_template("/lessons/lessons.html", lessons = lessons)
 
@@ -28,7 +28,7 @@ def add_lesson():
     description = request.form['description']
     new_lesson = Lesson(title, date, time, duration, instructor, location, capacity, description)
     lesson_repository.save(new_lesson)
-    return redirect("/")
+    return redirect("/classes")
 
 @lessons_blueprint.route("/classes/<id>/edit", methods=['GET'])
 def edit_lesson(id):
