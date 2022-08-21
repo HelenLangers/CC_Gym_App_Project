@@ -23,3 +23,14 @@ def view_one(id):
     lessons = member_repository.list_lessons_member_is_signed_up_for(member)
     return render_template("/members/onemember.html", member = member, lessons = lessons)
 
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
+def edit_member(id):
+    member = member_repository.select(id)
+    return render_template("/members/editmember.html", member = member) 
+
+@members_blueprint.route("/members/<id>", methods=['POST'])
+def update_member(id):
+    name = request.form['name']
+    member = Member(name, id)
+    member_repository.update(member)
+    return redirect("/members")
