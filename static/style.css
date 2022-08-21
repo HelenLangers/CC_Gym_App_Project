@@ -88,6 +88,11 @@ main {
     margin-bottom: 4px;
 }
 
+.dashboard a {
+    color: black;
+    text-decoration: none;
+}
+
 
 footer {
     padding: 1rem;
