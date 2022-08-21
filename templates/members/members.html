@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div>
+        <p><a href="/" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
+    </div>
+    <h2 class="lesson-heading">Current Members</h2>
+</section>
+<section class="lesson-list">
+    {% for member in members %}
+        <div class="lesson-blocks">
+            <h3>{{ member.name }}</h3>
+            <p><i class="fa-solid fa-circle-info"></i> <a href="/members/{{ member.id }}">See more</a></p>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
