@@ -50,6 +50,11 @@ nav>ul>li>a {
 }
 
 main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.homepage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +63,7 @@ main {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
 }
 
@@ -88,26 +93,23 @@ main {
     text-decoration: none;
 }
 
-.lesson-main {
-    margin: auto;
-}
-
 .lesson-heading {
-    color: white;
+    color: #fff;
+    text-align: center;
 }
 
-.container-lessons {
+.lesson-list {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: space-around;
 }
 
 .lesson-blocks {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 15px 20px;
     border-radius: 10px;
+    margin: 20px 10px;
     background-color: #E3FAFF;
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px; 
 }
