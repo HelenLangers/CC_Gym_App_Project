@@ -18,7 +18,7 @@ def select(id):
 
     if results:
         result = results[0]
-        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor'], result['location'], result['capacity'], result['description'])
+        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor'], result['location'], result['capacity'], result['description'], result['id'])
     return lesson
 
 def select_all():
@@ -27,7 +27,7 @@ def select_all():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for row in results:
-        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'], row['id'])
         lessons.append(lesson)
     return lessons
 

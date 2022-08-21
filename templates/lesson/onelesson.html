@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="dashboard">
+        <h3>{{ lesson.title }}</h3>
+        <p>{{ lesson.date }} at {{ lesson.time }}</p>
+        <p>for {{ lesson.duration }} in the {{ lesson.location }}</p>
+        <p>Instructor: {{ lesson.instructor }}</p>
+        <p>{{ lesson.description }}</p>
+        <p>Capacity: {{ lesson.capacity }}</p>
+        <br>
+        <p>Attendance list:</p>
+        {% for member in members %}
+            <p>{{ member.name }}</p>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
