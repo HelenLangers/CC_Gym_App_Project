@@ -84,6 +84,8 @@ main {
 
 .dashboard p {
     text-align: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 
