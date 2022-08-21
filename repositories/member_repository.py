@@ -61,3 +61,8 @@ def select_all_len():
         member = Member(row['name'], row['id'])
         members.append(member)
     return len(members)   
+
+def update(member):
+    sql = "UPDATE members SET name = %s WHERE id = %s"
+    values = [member.name, member.id]
+    run_sql(sql, values)
