@@ -12,7 +12,7 @@
     {% for member in members %}
         <div class="lesson-blocks">
             <h3>{{ member.name }}</h3>
-            <p><i class="fa-solid fa-circle-info"></i> <a href="/members/{{ member.id }}">See more</a></p>
+            <a href="/members/{{ member.id }}" class="button">See More</a>
         </div>
     {% endfor %}
 </section>

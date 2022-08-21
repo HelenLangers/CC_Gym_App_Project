@@ -32,9 +32,11 @@ nav>ul>li>a {
 }
 
 .button {
-    background-color: #256F87;
-    border: solid;
-    color:#fff;
+    font-family: 'Expletus Sans', cursive;
+    background-color: #E3FAFF;
+    border: solid #256F87;
+    color: black;
     padding: 8px;
+    margin: 3px;
     text-align: center;
 }

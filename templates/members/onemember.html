@@ -8,7 +8,7 @@
     <div class="container">
         <div class="one-lesson-block">
             <h3 class="attendance-title">{{ member.name }}</h3>
-            <a href="/members/{{ member.id }}/edit" class="button" style="color: #fff">Edit Member</a>
+            <a href="/members/{{ member.id }}/edit" class="button">Edit Member</a>
             <form action="/members/{{ member.id }}/delete" method="POST">
                 <input class="button" type="submit" value="Remove Member" />
             </form>
@@ -17,6 +17,8 @@
             {% for lesson in lessons %}
             <p>{{ lesson.title }}</p>
             <p>{{ lesson.date }} at {{ lesson.time }}</p>
+            <form action="/bookings/{{ booking.id }}/delete" method="POST">
+                <input class="button" type="submit" value="Remove Booking" />
             <hr>
             {% endfor %}
         </div>

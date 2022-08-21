@@ -14,7 +14,7 @@
             <p>{{ lesson.date }}</p>
             <p>{{ lesson.time }}</p>
             <p>Capacity: {{lesson.capacity}}</p>
-            <p><i class="fa-solid fa-circle-info"></i> <a href="/classes/{{ lesson.id }}">See more</a></p>
+            <a href="/classes/{{ lesson.id }}" class="button">See More</a>
         </div>
     {% endfor %}
 </section>
