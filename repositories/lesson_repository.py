@@ -3,12 +3,14 @@ from db.run_sql import run_sql
 from models.lesson import Lesson
 from models.member import Member
 
+import repositories.instructor_repository as instructor_repository
+
 def save(lesson):
-    sql = "INSERT INTO lessons (title, date, time, duration, instructor, location, capacity, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [lesson.title, lesson.date, lesson.time, lesson.duration, lesson.instructor, lesson.location, lesson.capacity, lesson.description]
+    sql = "INSERT INTO lessons (title, date, time, duration, instructor_id, location, capacity, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [lesson.title, lesson.date, lesson.time, lesson.duration, lesson.instructor.id, lesson.location, lesson.capacity, lesson.description]
     results = run_sql(sql, values)
     lesson.id = results[0]['id']
-    return results
+    return lesson
 
 def select(id):
     lesson = None
@@ -18,7 +20,7 @@ def select(id):
 
     if results:
         result = results[0]
-        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor'], result['location'], result['capacity'], result['description'], result['id'])
+        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor_id'], result['location'], result['capacity'], result['description'], result['id'])
     return lesson
 
 def select_all():
@@ -27,7 +29,8 @@ def select_all():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for row in results:
-        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'], row['id'])
+        instructor = instructor_repository.select(row['instructor_id'])
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], instructor, row['location'], row['capacity'], row['description'], row['id'])
         lessons.append(lesson)
     return lessons
 
@@ -61,12 +64,12 @@ def select_all_len():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for row in results:
-        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor_id'], row['location'], row['capacity'], row['description'])
         lessons.append(lesson)
     return len(lessons)
 
 
 def update(lesson):
-    sql = "UPDATE lessons SET (title, date, time, duration, instructor, location, capacity, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE lessons SET (title, date, time, duration, instructor_id, location, capacity, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [lesson.title, lesson.date, lesson.time, lesson.duration, lesson.instructor, lesson.location, lesson.capacity, lesson.description, lesson.id]
     run_sql(sql, values)   

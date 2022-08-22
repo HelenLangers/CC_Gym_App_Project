@@ -22,4 +22,4 @@ def create_booking():
     lesson = lesson_repository.select(lesson_id)
     new_booking = Booking(lesson, member)
     booking_repositories.save(new_booking)
-    return redirect("/members")
+    return redirect("/")

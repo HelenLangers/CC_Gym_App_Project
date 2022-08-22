@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 import repositories.lesson_repository as lesson_repository
+import repositories.instructor_repository as instructor_repository
 from models.lesson import Lesson 
 
 lessons_blueprint = Blueprint("classes", __name__)
@@ -14,7 +15,8 @@ def lessons():
 def view_one(id):
     lesson = lesson_repository.select(id)
     members = lesson_repository.get_member_list_for_lesson(lesson)
-    return render_template("lessons/onelesson.html", lesson = lesson, members = members)
+    instructor = instructor_repository.select(id)
+    return render_template("lessons/onelesson.html", lesson = lesson, members = members, instructor = instructor)
 
 @lessons_blueprint.route("/classes", methods=['POST'])
 def add_lesson():
@@ -22,7 +24,7 @@ def add_lesson():
     date = request.form['date']
     time = request.form['time']
     duration = request.form['duration']
-    instructor = request.form['instructor']
+    instructor = instructor_repository.select(request.form['instructor_id'])
     location = request.form['location']
     capacity = request.form['capacity']
     description = request.form['description']
@@ -33,7 +35,8 @@ def add_lesson():
 @lessons_blueprint.route("/classes/<id>/edit", methods=['GET'])
 def edit_lesson(id):
     lesson = lesson_repository.select(id)
-    return render_template("/lessons/editlesson.html", lesson = lesson)
+    instructors = instructor_repository.select_all()
+    return render_template("/lessons/editlesson.html", lesson = lesson, instructors = instructors)
 
 @lessons_blueprint.route("/classes/<id>", methods=['POST'])
 def update_lesson(id):

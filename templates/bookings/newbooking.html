@@ -8,7 +8,7 @@
         <form action="/bookings" method="POST" class="form">
             <label for="member">
                 <span>Member:</span>
-                <select name="member_id" id="member">
+                <select name="member_id" id="member_id">
                     <option value="">--Select Member--</option>
                     {% for member in member_list %}
                     <option value="{{member.id}}">{{member.name}}</option>
@@ -18,7 +18,7 @@
 
             <label for="lesson">
                 <span>Class:</span>
-                <select name="lesson_id" id="lesson">
+                <select name="lesson_id" id="lesson_id">
                     <option value="">--Select Class--</option>
                     {% for lesson in lesson_list %}
                     <option value="{{lesson.id}}">{{lesson.title}}, {{lesson.date}}, {{lesson.time}}</option>

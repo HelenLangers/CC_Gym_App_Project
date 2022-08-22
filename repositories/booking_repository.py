@@ -1,8 +1,6 @@
 from db.run_sql import run_sql
 
 from models.booking import Booking
-from models.lesson import Lesson
-from models.member import Member
 
 def save(booking):
     sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
@@ -19,7 +17,7 @@ def select(id):
 
     if results:
         result = results[0]
-        booking = Booking(result['member_id'], result['lesson_id'])
+        booking = Booking(result['member_id'], result['lesson_id'], result['id'])
     return booking
 
 def select_all():
@@ -50,6 +48,3 @@ def select_all_len():
         booking = Booking(row['lesson_id'], row ['member_id'])
         bookings.append(booking)
     return len(bookings)
-
-# def select_booking_by_member_id():
-    

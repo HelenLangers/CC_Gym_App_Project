@@ -36,8 +36,13 @@
                 </label>
 
                 <label for="instructor">
-                <span>Instructor:</span>
-                <input type="text" name="instructor" id="instructor">
+                    <span>Instructor:</span>
+                    <select name="instructor_id" id="instructor_id">
+                        <option value="">--Select Instructor--</option>
+                        {% for instructor in instructor_list %}
+                        <option value="{{instructor.id}}">{{instructor.name}} - {{instructor.speciality}}</option>
+                        {% endfor %}
+                    </select>
                 </label>
 
                 <label for="location">

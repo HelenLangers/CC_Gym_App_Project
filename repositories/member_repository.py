@@ -48,7 +48,7 @@ def list_lessons_member_is_signed_up_for(member):
     results = run_sql(sql, values)
 
     for row in results:
-        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor'], row['location'], row['capacity'], row['description'])
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor_id'], row['location'], row['capacity'], row['description'])
         lessons.append(lesson)
     return lessons
 

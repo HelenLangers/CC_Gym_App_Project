@@ -17,7 +17,7 @@ def select(id):
 
     if results:
         result = results[0]
-        instructor = Instructor(result['name'], result['speciality'], result['bio'])
+        instructor = Instructor(result['name'], result['speciality'], result['bio'], result['id'])
     return instructor
 
 def select_all():
@@ -26,8 +26,8 @@ def select_all():
     sql = "SELECT * FROM instructors"
     results = run_sql(sql)
     for row in results:
-        instructor = Instructor(row['name'], row['speciality'], row['bio'])
-        instructors.append(instructors)
+        instructor = Instructor(row['name'], row['speciality'], row['bio'], row['id'])
+        instructors.append(instructor)
     return instructors
 
 def delete(id):
