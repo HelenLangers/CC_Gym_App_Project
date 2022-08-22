@@ -171,6 +171,16 @@ footer {
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px; 
 }
 
+.image-name {
+    display: flex;
+}
+
+img {
+    max-width: 100px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
 /* @media (max-width: 768px) {
     .lesson-blocks {
         display: block;

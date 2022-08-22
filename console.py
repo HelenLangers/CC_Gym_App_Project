@@ -19,7 +19,7 @@ instructor2 = Instructor("Clara", "Yoga", "Learning her craft in Bali then India
 instructor_repository.save(instructor2)
 instructor3 = Instructor("Luke", "Strength", "Luke doesn't take steroids, we promise. We've tested. He's just really strong, and you can be too!")
 instructor_repository.save(instructor3)
-instructor4 = Instructor("Pam", "Strength", "Pam is passionate about getting more women working with weights, especially as they get older and are more at risk of poor bone health")
+instructor4 = Instructor("Pam", "Strength", "Pam is passionate about getting more women working with weights, especially as they get older and more at risk of poor bone health")
 instructor_repository.save(instructor4)
 instructor5 = Instructor("Joe", "Core", "Joe works with a range of members who want to activate their core better. If you've got a bad back - seek out Joe.")
 instructor_repository.save(instructor5)

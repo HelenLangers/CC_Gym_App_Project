@@ -11,7 +11,10 @@
 <section class="lesson-list">
     {% for member in members %}
         <div class="lesson-blocks">
+            <div class="image-name">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="blank profile picture">
             <h3>{{ member.name }}</h3>
+            </div>
             <a href="/members/{{ member.id }}" class="button">See More</a>
         </div>
     {% endfor %}
