@@ -14,7 +14,7 @@
         <p class="description">{{ lesson.description }}</p>
         <a href="/classes/{{ lesson.id }}/edit" class="button">Edit Class</a> 
         <form action="/classes/{{ lesson.id }}/delete" method="POST">
-            <input class="button" type="submit" value="Delete Class" />
+            <input class="button" onclick="return confirm('Are you sure?')" type="submit" value="Delete Class" />
         </form>
         <hr>
         <p>Total Capacity: {{ lesson.capacity }}</p>
