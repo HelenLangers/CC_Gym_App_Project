@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div>
+        <p><a href="/" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
+    </div>
+    <h2 class="lesson-heading">Meet Our Instructors</h2>
+</section>
+<section class="lesson-list">
+    {% for instructor in instructors %}
+        <div class="lesson-blocks">
+            <h3>{{ instructor.name }}</h3>
+            <p>Speciality: {{ instructor.speciality }}</p>
+            <p class="description">{{ instructor.bio }}</p>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

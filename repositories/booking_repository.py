@@ -26,7 +26,7 @@ def select_all():
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
     for row in results:
-        booking = Booking(row['lesson_id'], row ['member_id'])
+        booking = Booking(row['lesson_id'], row ['member_id'], row['id'])
         bookings.append(booking)
     return bookings
 
@@ -45,6 +45,6 @@ def select_all_len():
     sql = "SELECT * FROM bookings"
     results = run_sql(sql)
     for row in results:
-        booking = Booking(row['lesson_id'], row ['member_id'])
+        booking = Booking(row['lesson_id'], row ['member_id'], row['id'])
         bookings.append(booking)
     return len(bookings)

@@ -38,3 +38,13 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM instructors"
     run_sql(sql)
+
+def select_all_len():
+    instructors = []
+
+    sql = "SELECT * FROM instructors"
+    results = run_sql(sql)
+    for row in results:
+        instructor = Instructor(row['name'], row['speciality'], row['bio'], row['id'])
+        instructors.append(instructor)
+    return len(instructors)

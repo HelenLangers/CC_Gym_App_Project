@@ -13,7 +13,7 @@ member_repository.delete_all()
 lesson_repository.delete_all()
 booking_repository.delete_all()
 
-instructor1 = Instructor("Jim", "Cycling", "Legend has it Jim won the Tour de France three times, but got caught doping. You'll not find a record of it, but you'll not stop hearing about it. We're thrilled to have him leading our spin classes at Active Gym.")
+instructor1 = Instructor("Jim", "Cycling", "Legend has it, Jim won the Tour de France three times, but got caught doping. You'll not find a record of it, but you'll not stop hearing about it. We're thrilled to have him leading our spin classes at Active Gym.")
 instructor_repository.save(instructor1)
 instructor2 = Instructor("Clara", "Yoga", "Learning her craft in Bali then India, you're in great hands even if you're a total beginner to yoga.")
 instructor_repository.save(instructor2)

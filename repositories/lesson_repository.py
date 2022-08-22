@@ -64,7 +64,7 @@ def select_all_len():
     sql = "SELECT * FROM lessons"
     results = run_sql(sql)
     for row in results:
-        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor_id'], row['location'], row['capacity'], row['description'])
+        lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor_id'], row['location'], row['capacity'], row['description'], row['id'])
         lessons.append(lesson)
     return len(lessons)
 
