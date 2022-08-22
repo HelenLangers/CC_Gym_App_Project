@@ -17,8 +17,6 @@
             {% for lesson in lessons %}
             <p>{{ lesson.title }}</p>
             <p>{{ lesson.date }} at {{ lesson.time }}</p>
-            <form action="/bookings/{{ booking.id }}/delete" method="POST">
-                <input class="button" type="submit" value="Remove Booking" />
             <hr>
             {% endfor %}
         </div>

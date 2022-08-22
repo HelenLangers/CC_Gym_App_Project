@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS lessons;
+DROP TABLE IF EXISTS instructors;
 
 CREATE TABLE lessons (
     id SERIAL PRIMARY KEY,
@@ -24,3 +25,10 @@ CREATE TABLE bookings (
     lesson_id INT REFERENCES lessons(id) ON DELETE CASCADE,
     member_id INT REFERENCES members(id) ON DELETE CASCADE
 );
+
+CREATE TABLE instructors {
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    speciality VARCHAR(255),
+    bio VARCHAR(255)
+};

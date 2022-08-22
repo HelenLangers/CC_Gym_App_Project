@@ -1,14 +1,29 @@
 from models.member import Member
 from models.booking import Booking
 from models.lesson import Lesson
+from models.instructor import Instructor
 
 import repositories.member_repository as member_repository
 import repositories.booking_repository as booking_repository
 import repositories.lesson_repository as lesson_repository
+import repositories.instructor_repository as instructor_repository
 
 member_repository.delete_all()
 lesson_repository.delete_all()
 booking_repository.delete_all()
+
+instructor1 = Instructor("Jim", "Cycling", "Legend has it Jim won the Tour de France three times, but got caught doping. You'll not find a record of it, but you'll not stop hearing about it. We're thrilled to have him leading our spin classes at Active Gym.")
+instructor_repository.save(instructor1)
+instructor2 = Instructor("Clara", "Yoga", "Learning her craft in Bali then India, you're in great hands even if you're a total beginner to yoga.")
+instructor_repository.save(instructor2)
+instructor3 = Instructor("Luke", "Strength", "Luke doesn't take steroids, we promise. We've tested. He's just really strong, and you can be too!")
+instructor_repository.save(instructor3)
+instructor4 = Instructor("Pam", "Strength", "Pam is passionate about getting more women working with weights, especially as they get older and are more at risk of poor bone health")
+instructor_repository.save(instructor4)
+instructor5 = Instructor("Joe", "Core", "Joe works with a range of members who want to activate their core better. If you've got a bad back - seek out Joe.")
+instructor_repository.save(instructor5)
+instructor6 = Instructor("Linda", "Thai Chi", "If you know, you know.")
+instructor_repository.save(instructor6)
 
 member1 = Member("Mike Langridge")
 member_repository.save(member1)

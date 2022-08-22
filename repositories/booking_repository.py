@@ -50,3 +50,6 @@ def select_all_len():
         booking = Booking(row['lesson_id'], row ['member_id'])
         bookings.append(booking)
     return len(bookings)
+
+# def select_booking_by_member_id():
+    
