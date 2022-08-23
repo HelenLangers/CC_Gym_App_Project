@@ -10,7 +10,7 @@
         <h3 class="attendance-title">{{ lesson.title }}</h3>
         <p>{{ lesson.date }} at {{ lesson.time }}</p>
         <p>{{ lesson.duration }} in the {{ lesson.location }}</p>
-        <p>Instructor: {{ instructor.name }}</p>
+        <p>Instructor: {{ lesson.instructor.name }}</p>
         <p class="description">{{ lesson.description }}</p>
         <a href="/classes/{{ lesson.id }}/edit" class="button">Edit Class</a> 
         <form action="/classes/{{ lesson.id }}/delete" method="POST">

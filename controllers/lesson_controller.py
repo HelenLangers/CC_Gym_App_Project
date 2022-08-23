@@ -15,8 +15,7 @@ def lessons():
 def view_one(id):
     lesson = lesson_repository.select(id)
     members = lesson_repository.get_member_list_for_lesson(lesson)
-    instructor = instructor_repository.select(id)
-    return render_template("lessons/onelesson.html", lesson = lesson, members = members, instructor = instructor)
+    return render_template("lessons/onelesson.html", lesson = lesson, members = members)
 
 @lessons_blueprint.route("/classes", methods=['POST'])
 def add_lesson():

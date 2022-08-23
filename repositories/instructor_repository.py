@@ -48,3 +48,8 @@ def select_all_len():
         instructor = Instructor(row['name'], row['speciality'], row['bio'], row['id'])
         instructors.append(instructor)
     return len(instructors)
+
+def update(instructor):
+    sql = "UPDATE members SET (name, speciality, bio) = (%s, %s, %s) WHERE id = %s"
+    values = [instructor.name, instructor.speciality, instructor.bio, instructor.id]
+    run_sql(sql, values)

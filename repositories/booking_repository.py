@@ -14,7 +14,7 @@ def save(booking):
     results = run_sql(sql, values)
     if results != []:
         booking.id = results[0]['id']
-        return True
+        return booking
     return False
 
 def select(id):

@@ -14,3 +14,4 @@ def view_all_instructors():
 def delete_instructor(id):
     instructor_repositories.delete(id)
     return redirect("/instructors")
+

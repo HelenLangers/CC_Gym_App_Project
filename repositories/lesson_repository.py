@@ -20,7 +20,8 @@ def select(id):
 
     if results:
         result = results[0]
-        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], result['instructor_id'], result['location'], result['capacity'], result['description'], result['id'])
+        instructor = instructor_repository.select(result['instructor_id'])
+        lesson = Lesson(result['title'], result['date'], result['time'], result['duration'], instructor, result['location'], result['capacity'], result['description'], result['id'])
     return lesson
 
 def select_all():
@@ -54,7 +55,7 @@ def get_member_list_for_lesson(lesson):
     results = run_sql(sql, values)
 
     for row in results:
-        member = Member(row['name'])
+        member = Member(row['name'], row['id'])
         members.append(member)
     return members
 

@@ -14,6 +14,7 @@
             <p>{{ lesson.date }}</p>
             <p>{{ lesson.time }}</p>
             <p>Capacity: {{lesson.capacity}}</p>
+            <p>{{ lesson.instructor.name }}</p>
             <a href="/classes/{{ lesson.id }}" class="button">See More</a>
         </div>
     {% endfor %}
