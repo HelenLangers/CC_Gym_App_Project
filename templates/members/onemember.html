@@ -10,7 +10,7 @@
             <h3 class="attendance-title">{{ member.name }}</h3>
             <a href="/members/{{ member.id }}/edit" class="button">Edit Member</a>
             <form action="/members/{{ member.id }}/delete" method="POST">
-                <input class="button" onclick="return confirm('Are you sure?')" type="submit" value="Remove Member" />
+                <input class="button" type="submit" value="Remove Member" />
             </form>
             <br>
             <p class="attendance-title">Bookings:</p>

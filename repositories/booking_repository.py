@@ -9,13 +9,13 @@ from models.lesson import Lesson
 from models.member import Member
 
 def save(booking):
-        sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
-        values = [booking.member.id, booking.lesson.id]
-        results = run_sql(sql, values)
-        if results != []:
-            booking.id = results[0]['id']
-            return True
-        return False
+    sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
+    values = [booking.member.id, booking.lesson.id]
+    results = run_sql(sql, values)
+    if results != []:
+        booking.id = results[0]['id']
+        return True
+    return False
 
 def select(id):
     booking = None
