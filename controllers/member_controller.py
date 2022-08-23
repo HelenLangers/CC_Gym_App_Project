@@ -16,7 +16,7 @@ def add_member():
     name = request.form['name']
     new_member = Member(name)
     member_repository.save(new_member)
-    return redirect("/")
+    return redirect("/members")
     
 @members_blueprint.route("/members/<id>")
 def view_one(id):

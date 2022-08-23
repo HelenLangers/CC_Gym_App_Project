@@ -26,7 +26,9 @@ def create_booking():
     member = member_repository.select(member_id)
     lesson = lesson_repository.select(lesson_id)
     new_booking = Booking(lesson, member)
-    booking_repositories.save(new_booking)
+    
+    if booking_repositories.save(new_booking) == False:
+        return render_template("/bookings/duplicatebooking.html", member = member, lesson = lesson)
     return redirect("/bookings")
 
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])

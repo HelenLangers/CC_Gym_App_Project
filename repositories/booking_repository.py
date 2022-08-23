@@ -12,10 +12,10 @@ def save(booking):
         sql = "INSERT INTO bookings (member_id, lesson_id) VALUES (%s, %s) RETURNING id"
         values = [booking.member.id, booking.lesson.id]
         results = run_sql(sql, values)
-        print(results)
-        if results[0] != []:
+        if results != []:
             booking.id = results[0]['id']
-        return booking
+            return True
+        return False
 
 def select(id):
     booking = None
@@ -54,7 +54,6 @@ def member_of_booking(booking):
     results = run_sql(sql, values)
     member = Member(results['name'], results ['id'])
     return member
-
 
 def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"
