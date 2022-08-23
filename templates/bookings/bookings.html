@@ -11,17 +11,27 @@
     </div>
 </section>
 <section class="lesson-list">
-    {% for booking in booking_list %}
-        <div class="lesson-blocks">
-            <p>You have booked {{ booking.member.name }} onto {{ booking.lesson.title }} on {{ booking.lesson.date }} at {{ booking.lesson.time }}
-            </p>
-            <form action="/bookings/{{ booking.id }}/delete" method="POST">
-                <input class="button" type="submit" value="Remove Booking" />
-            </form>
-        </div>
-    {% endfor %}
+    <div class="bookings-table">
+        <table>
+            <tr>
+                <th class="table-column-name">Class</th>
+                <th class="table-column-name">Date</th>
+                <th class="table-column-name">Time</th>
+                <th class="table-column-name">Member</th>
+                <th></th>
+            </tr>
+            {% for booking in booking_list %}
+            <tr class="row-divider">
+                <td>{{booking.lesson.title}}</td>
+                <td>{{booking.lesson.date}}</td>
+                <td>{{booking.lesson.time}}</td>
+                <td>{{booking.member.name}}</td>
+                <td><form action="/bookings/{{ booking.id }}/delete" method="POST">
+                    <input class="button" type="submit" value="Remove Booking" />
+                </form></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </section>
-
-
-
 {% endblock %}
