@@ -8,7 +8,7 @@
     <div class="container">
         <div class="one-lesson-block">
         <h3 class="attendance-title">{{ lesson.title }}</h3>
-        <p>{{ lesson.date }} at {{ lesson.time }}</p>
+        <p>{{ lesson.date.strftime("%A %d %B") }} at {{ lesson.time }}</p>
         <p>{{ lesson.duration }} in the {{ lesson.location }}</p>
         <p>Instructor: {{ lesson.instructor.name }}</p>
         <p class="description">{{ lesson.description }}</p>

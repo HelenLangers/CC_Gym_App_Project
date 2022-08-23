@@ -13,7 +13,7 @@ CREATE TABLE instructors (
 CREATE TABLE lessons (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    date VARCHAR(255),
+    date DATE NOT NULL,
     time VARCHAR(255),
     duration VARCHAR(255),
     instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,

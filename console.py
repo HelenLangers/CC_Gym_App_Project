@@ -1,3 +1,5 @@
+import datetime
+
 from models.member import Member
 from models.booking import Booking
 from models.lesson import Lesson
@@ -41,17 +43,17 @@ member_repository.save(member6)
 member7 = Member("Emily Willing")
 member_repository.save(member7)
 
-lesson1 = Lesson("Spin with Jim", "Monday 5th September", "07:00", "60 mins", instructor1, "Spin Room", 20, "Rise and shine with an hour's intense spin class that'll have you hitting your VO2 max over and over again. Don't forget your own electrolyte drink and towel")
+lesson1 = Lesson("Spin with Jim", datetime.date(2022, 9, 5), "07:00", "60 mins", instructor1, "Spin Room", 20, "Rise and shine with an hour's intense spin class that'll have you hitting your VO2 max over and over again. Don't forget your own electrolyte drink and towel")
 lesson_repository.save(lesson1)
-lesson2 = Lesson("Peaceful Yoga", "Wednesday 7th September", "17:30", "60 mins", instructor2, "Studio", 5, "Stretch off the stresses of mid-week with our restorative yoga hour")
+lesson2 = Lesson("Peaceful Yoga", datetime.date(2022, 9, 7), "17:30", "60 mins", instructor2, "Studio", 5, "Stretch off the stresses of mid-week with our restorative yoga hour")
 lesson_repository.save(lesson2)
-lesson3 = Lesson("Circuits", "Tuesday 6th September", "12:00", "30 mins", instructor3, "Weights Room", 10, "Hit every muscle group with dynamic exercises across 10 stations in a short and sharp 30 minute circuits class")
+lesson3 = Lesson("Circuits", datetime.date(2022, 9, 6), "12:00", "30 mins", instructor3, "Weights Room", 10, "Hit every muscle group with dynamic exercises across 10 stations in a short and sharp 30 minute circuits class")
 lesson_repository.save(lesson3)
-lesson4 = Lesson("Legs, Bums and Tums", "Monday 5th September", "11:00", "45 mins", instructor4, "Studio", 6, "Wear your squat proof leggings for this one, folks. Unless you want to embarrass yourself")
+lesson4 = Lesson("Legs, Bums and Tums", datetime.date(2022, 9, 5), "11:00", "45 mins", instructor4, "Studio", 6, "Wear your squat proof leggings for this one, folks. Unless you want to embarrass yourself")
 lesson_repository.save(lesson4)
-lesson5 = Lesson("The Core Essentials", "Monday 5th September", "19:00", "45 mins", instructor5, "Weights Room", 10, "You use your core for everything, including drinking that beer. So give it the workout it deserves")
+lesson5 = Lesson("The Core Essentials", datetime.date(2022, 9, 5), "19:00", "45 mins", instructor5, "Weights Room", 10, "You use your core for everything, including drinking that beer. So give it the workout it deserves")
 lesson_repository.save(lesson5)
-lesson6 = Lesson("Thai Chi", "Tuesday 6th September", "07:00", "45 mins", instructor6, "Studio", 5, "If you know, you know. All welcome")
+lesson6 = Lesson("Thai Chi", datetime.date(2022, 9, 6), "07:00", "45 mins", instructor6, "Studio", 5, "If you know, you know. All welcome")
 lesson_repository.save(lesson6)
 
 booking1 = Booking(lesson1, member2)

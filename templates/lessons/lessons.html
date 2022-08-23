@@ -11,7 +11,7 @@
     {% for lesson in lessons %}
         <div class="lesson-blocks">
             <h3>{{ lesson.title }}</h3>
-            <p>{{ lesson.date }}</p>
+            <p>{{ lesson.date.strftime("%A %d %B") }}</p>
             <p>{{ lesson.time }}</p>
             <p>Capacity: {{lesson.capacity}}</p>
             <p>{{ lesson.instructor.name }}</p>
