@@ -8,6 +8,11 @@ from models.booking import Booking
 bookings_blueprint = Blueprint("bookings", __name__)
 
 @bookings_blueprint.route("/bookings")
+def view_all():
+    booking_list = booking_repositories.select_all()
+    return render_template("/bookings/bookings.html", booking_list = booking_list)
+
+@bookings_blueprint.route("/bookings/newbooking")
 def booking_form():
     member_list = member_repository.select_all()
     lesson_list = lesson_repository.select_all()
@@ -22,4 +27,9 @@ def create_booking():
     lesson = lesson_repository.select(lesson_id)
     new_booking = Booking(lesson, member)
     booking_repositories.save(new_booking)
-    return redirect("/")
+    return redirect("/bookings")
+
+@bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
+def delete_booking(id):
+    booking_repositories.delete(id)
+    return redirect("/bookings")

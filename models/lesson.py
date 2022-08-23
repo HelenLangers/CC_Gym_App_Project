@@ -1,3 +1,5 @@
+import datetime
+
 class Lesson:
 
     def __init__(self, title, date, time, duration, instructor, location, capacity, description, id = None):
@@ -10,3 +12,5 @@ class Lesson:
         self.capacity = capacity
         self.description = description
         self.id = id
+
+    

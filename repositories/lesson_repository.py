@@ -58,6 +58,9 @@ def get_member_list_for_lesson(lesson):
         members.append(member)
     return members
 
+def is_space(lesson):
+    return len(get_member_list_for_lesson(lesson)) < lesson.capacity
+
 def select_all_len():
     lessons = []
 
@@ -67,7 +70,6 @@ def select_all_len():
         lesson = Lesson(row['title'], row['date'], row['time'], row['duration'], row['instructor_id'], row['location'], row['capacity'], row['description'], row['id'])
         lessons.append(lesson)
     return len(lessons)
-
 
 def update(lesson):
     sql = "UPDATE lessons SET (title, date, time, duration, instructor_id, location, capacity, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"

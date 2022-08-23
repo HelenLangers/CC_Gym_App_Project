@@ -41,3 +41,4 @@ def delete_member(id):
     member_repository.delete(id)
     return redirect("/members")
 
+

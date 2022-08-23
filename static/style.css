@@ -121,6 +121,11 @@ main {
     text-decoration: none;
 }
 
+.new-booking-button {
+    display: flex;
+    justify-content: center;
+}
+
 .one-lesson-block {
     display: flex;
     flex-direction: column;

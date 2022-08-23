@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div>
+        <p><a href="/" class="back-arrow"><i class="fa-solid fa-arrow-left"></i> Back</a></p>
+    </div>
+    <h2 class="lesson-heading">Bookings</h2>
+    <div class="new-booking-button">
+    <a href="/bookings/newbooking" class="button">Make a new booking</a>
+    </div>
+</section>
+<section class="lesson-list">
+    {% for booking in booking_list %}
+        <div class="lesson-blocks">
+            <p>You have booked {{ booking.member.name }} onto {{ booking.lesson.title }} on {{ booking.lesson.date }} at {{ booking.lesson.time }}
+            </p>
+            <form action="/bookings/{{ booking.id }}/delete" method="POST">
+                <input class="button" onclick="return confirm('Are you sure?')" type="submit" value="Remove Booking" />
+            </form>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
