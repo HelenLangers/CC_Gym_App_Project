@@ -27,7 +27,7 @@ def select(id):
 def select_all():
     lessons = []
 
-    sql = "SELECT * FROM lessons"
+    sql = "SELECT * FROM lessons ORDER BY date ASC, time ASC"
     results = run_sql(sql)
     for row in results:
         instructor = instructor_repository.select(row['instructor_id'])

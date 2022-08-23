@@ -21,7 +21,7 @@
     
                     <label for="time">
                     <span>Time:</span>
-                    <input type="time" name="time" id="time" value="{{lesson.time.strftime("%H %M") }}">
+                    <input type="time" name="time" id="time" value="{{lesson.time}}">
                     </label>
     
                     <label for="duration">
@@ -31,8 +31,14 @@
     
                     <label for="instructor">
                     <span>Instructor:</span>
-                    <input type="text" name="instructor" id="instructor" value="{{lesson.instructor.name}}">
+                    <select name="instructor" id="instructor">
+                        {% for instructor in instructors %}
+                        <option value="{{instructor.id}}">{{instructor.name}} - {{instructor.speciality}}</option>
+                        {% endfor %}
+                    </select>   
                     </label>
+
+                
     
                     <label for="location">
                     <span>Location:</span>
