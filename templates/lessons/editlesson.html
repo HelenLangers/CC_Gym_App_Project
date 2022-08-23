@@ -21,7 +21,7 @@
     
                     <label for="time">
                     <span>Time:</span>
-                    <input type="text" name="time" id="time" value="{{lesson.time}}">
+                    <input type="time" name="time" id="time" value="{{lesson.time.strftime("%H %M") }}">
                     </label>
     
                     <label for="duration">
@@ -31,7 +31,7 @@
     
                     <label for="instructor">
                     <span>Instructor:</span>
-                    <input type="text" name="instructor" id="instructor" value="{{lesson.instructor}}">
+                    <input type="text" name="instructor" id="instructor" value="{{lesson.instructor.name}}">
                     </label>
     
                     <label for="location">

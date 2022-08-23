@@ -21,7 +21,7 @@
                 <select name="lesson_id" id="lesson_id">
                     <option value="">--Select Class--</option>
                     {% for lesson in lesson_list %}
-                    <option value="{{lesson.id}}">{{lesson.title}}, {{lesson.date}}, {{lesson.time}}</option>
+                    <option value="{{lesson.id}}">{{lesson.title}}, {{lesson.date.strftime("%a %d %b")}}, {{lesson.time.strftime("%H %M") }}</option>
                     {% endfor %}
                 </select>
             </label>

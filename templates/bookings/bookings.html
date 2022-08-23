@@ -23,8 +23,8 @@
             {% for booking in booking_list %}
             <tr class="row-divider">
                 <td>{{booking.lesson.title}}</td>
-                <td>{{booking.lesson.date}}</td>
-                <td>{{booking.lesson.time}}</td>
+                <td>{{booking.lesson.date.strftime("%a %d %b")}}</td>
+                <td>{{booking.lesson.time.strftime("%H %M") }}</td>
                 <td>{{booking.member.name}}</td>
                 <td><form action="/bookings/{{ booking.id }}/delete" method="POST">
                     <input class="button" type="submit" value="Remove Booking" />
