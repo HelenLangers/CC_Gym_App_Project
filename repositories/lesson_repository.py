@@ -58,8 +58,10 @@ def get_member_list_for_lesson(lesson):
         members.append(member)
     return members
 
-def is_space(lesson):
-    return len(get_member_list_for_lesson(lesson)) <= lesson.capacity
+def lesson_full(lesson):
+    if len(get_member_list_for_lesson(lesson)) >= lesson.capacity:
+        return True
+    return False
 
 def select_all_len():
     lessons = []

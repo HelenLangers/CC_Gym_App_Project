@@ -33,7 +33,7 @@ def select_all():
 def delete(id):
     sql = "DELETE FROM instructors WHERE id = %s"
     values = [id]
-    run_sql = (sql, values)
+    run_sql(sql, values)
 
 def delete_all():
     sql = "DELETE FROM instructors"

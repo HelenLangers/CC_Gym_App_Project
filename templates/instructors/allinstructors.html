@@ -13,9 +13,12 @@
             <div class="image-name">
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="blank profile picture">
             <h3>{{ instructor.name }}</h3>
-        </div>
+            </div>
             <p>Speciality: {{ instructor.speciality }}</p>
             <p class="description">{{ instructor.bio }}</p>
+            <form action="/instructors/{{ instructor.id }}/delete" method="POST">
+                <input class="button" type="submit" value="Sack Instructor" />
+            </form>
         </div>
     {% endfor %}
 </section>
