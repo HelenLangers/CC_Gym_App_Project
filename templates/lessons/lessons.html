@@ -8,42 +8,15 @@
     <h2 class="lesson-heading">All Lessons</h2>
 </section>
 <section class="lesson-list">
-    <div class="class-day-split">
     {% for lesson in lessons %}
-        {% if 'Monday' in lesson.date.strftime("%A %d %B") %}
         <div class="lesson-blocks">
             <h3>{{ lesson.title }}</h3>
             <p>{{ lesson.date.strftime("%A %d %B") }}</p>
             <p>{{ lesson.time.strftime("%H %M") }}</p>
             <p>Capacity: {{lesson.capacity}}</p>
+            <p>{{ lesson.instructor.name }}</p>
             <a href="/classes/{{ lesson.id }}" class="button">See More</a>
         </div>
-        {% endif %}
-    </div>
-    <!-- <div class="class-day-split">
-            {% if 'Tuesday' in lesson.date.strftime("%A %d %B") %}
-            <div class="lesson-blocks">
-                <h3>{{ lesson.title }}</h3>
-                <p>{{ lesson.date.strftime("%A %d %B") }}</p>
-                <p>{{ lesson.time.strftime("%H %M") }}</p>
-                <p>Capacity: {{lesson.capacity}}</p>
-                <a href="/classes/{{ lesson.id }}" class="button">See More</a>
-            </div>
-            {% endif %}
-        </div>
-        
-        <div class="class-day-split">
-            {% if 'Wednesday' in lesson.date.strftime("%A %d %B") %}
-            <div class="lesson-blocks">
-                <h3>{{ lesson.title }}</h3>
-                <p>{{ lesson.date.strftime("%A %d %B") }}</p>
-                <p>{{ lesson.time.strftime("%H %M") }}</p>
-                <p>Capacity: {{lesson.capacity}}</p>
-                <a href="/classes/{{ lesson.id }}" class="button">See More</a>
-            </div>
-            {% endif %}
-        </div>
-         -->
     {% endfor %}
 </section>
 
