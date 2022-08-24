@@ -29,7 +29,7 @@ def create_booking():
     if lesson_repository.lesson_full(lesson):
         return render_template("/bookings/lessonfull.html")
     elif booking_repositories.save(new_booking) == False:
-            return render_template("/bookings/duplicatebooking.html", member = member, lesson = lesson)
+        return render_template("/bookings/duplicatebooking.html", member = member, lesson = lesson)
     return redirect("/bookings")
 
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])

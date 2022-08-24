@@ -33,8 +33,8 @@
                     <span>Instructor:</span>
                     <select name="instructor" id="instructor">
                         {% for instructor in instructors %}
-                        <option value="{{instructor.id}}">{{instructor.name}} - {{instructor.speciality}}</option>
-                        {% endfor %}
+                        <option value="{{instructor.id}}" {{"selected" if instructor.id == lesson.instructor.id }}>{{instructor.name}} - {{instructor.speciality}}</option>
+                        {% endfor %} 
                     </select>   
                     </label>
     
